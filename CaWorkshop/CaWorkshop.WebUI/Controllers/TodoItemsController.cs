@@ -78,6 +78,10 @@ namespace CaWorkshop.WebUI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
+        ///Is there an attribute decorator that can be added to a controller / action so that it's not shown in swagger?
+
+        //[ApiExplorerSettings(IgnoreApi = true)]
+
         public async Task<ActionResult<long>> PostTodoItem(TodoItem todoItem)
         {
             _context.TodoItems.Add(todoItem);
