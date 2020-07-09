@@ -17,9 +17,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { API_BASE_URL } from './services/data.service';
+// import { API_BASE_URL } from './services/data.service';
 import { environment } from 'src/environments/environment';
-import { TodoComponent } from './todo/todo.component';
+// import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,7 @@ import { TodoComponent } from './todo/todo.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
-    TodoComponent
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,7 +38,6 @@ import { TodoComponent } from './todo/todo.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'todo', component: TodoComponent, canActivate: [AuthorizeGuard] },
     ]),
     FontAwesomeModule,
     BrowserAnimationsModule,
@@ -47,7 +45,7 @@ import { TodoComponent } from './todo/todo.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
-    , { provide: API_BASE_URL, useValue: environment.apiBaseUrl }
+    // , { provide: API_BASE_URL, useValue: environment.apiBaseUrl }
   ],
   bootstrap: [AppComponent]
 })
