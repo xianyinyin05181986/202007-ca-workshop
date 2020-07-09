@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaWorkshop.Domain", "CaWork
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaWorkshop.Application", "CaWorkshop.Application\CaWorkshop.Application.csproj", "{88EF3E70-E7BE-4206-BF97-B924F8D1FA3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaWorkshop.Infrastructure", "CaWorkshop.Infrastructure\CaWorkshop.Infrastructure.csproj", "{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{88EF3E70-E7BE-4206-BF97-B924F8D1FA3F}.Release|x64.Build.0 = Release|Any CPU
 		{88EF3E70-E7BE-4206-BF97-B924F8D1FA3F}.Release|x86.ActiveCfg = Release|Any CPU
 		{88EF3E70-E7BE-4206-BF97-B924F8D1FA3F}.Release|x86.Build.0 = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|x64.Build.0 = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Debug|x86.Build.0 = Debug|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|x64.ActiveCfg = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|x64.Build.0 = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|x86.ActiveCfg = Release|Any CPU
+		{EDFCA9EC-6C54-4852-B5CF-A68F2591D428}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
