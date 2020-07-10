@@ -89,11 +89,13 @@ namespace CaWorkshop.WebUI
             {
                 app.UseSpaStaticFiles();
             }
-            
-            app.UseOpenApi();
-            app.UseSwaggerUi3();
 
-            
+            app.UseSwaggerUi3(settings =>
+            {
+                settings.DocumentPath = "/api/specification.json";
+            });
+
+
             app.UseRouting();
 
             app.UseAuthentication();
