@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherForecast, WeatherForecastClient } from '../ca-workshop-api.service';
+import { WeatherForecast, WeatherForecastClient } from '../services/ca-workshop-api.service';
 
 @Component({
   selector: 'app-fetch-data',
