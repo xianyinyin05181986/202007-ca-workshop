@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSwag;
+using System.Linq;
 
 namespace CaWorkshop.WebUI
 {
@@ -49,6 +51,15 @@ namespace CaWorkshop.WebUI
             services.AddOpenApiDocument(configure =>
             {
                 configure.Title = "CaWorkshop API";
+                //Comment following line to disable authentication
+                configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
+                {
+                    Type = OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}."
+
+                });
             });
         }
 
