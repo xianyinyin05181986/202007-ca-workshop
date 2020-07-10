@@ -19,6 +19,9 @@ namespace CaWorkshop.Application
             services.AddTransient(typeof(IPipelineBehavior<,>),
                typeof(ValidationBehavior<,>));
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+    typeof(PerformanceBehaviour<,>));
             return services;
         }
     }

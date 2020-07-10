@@ -14,20 +14,13 @@ namespace CaWorkshop.WebUI.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class TodoListsController : ControllerBase
+    public class TodoListsController : ApiController
     {
-        private readonly IMediator _mediator;
-
-        public TodoListsController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         // GET: api/TodoLists
         [HttpGet]
         public async Task<ActionResult<TodosVm>> GetTodoLists()
         {
-            return await _mediator.Send(new GetTodoListsQuery());
+            return await Mediator.Send(new GetTodoListsQuery());
         }
 
         // POST: api/TodoLists
@@ -35,7 +28,7 @@ namespace CaWorkshop.WebUI.Controllers
         public async Task<ActionResult<int>> PostTodoList(
             CreateTodoListCommand command)
         {
-            return await _mediator.Send(command);
+            return await Mediator.Send(command);
         }
 
         // PUT: api/TodoLists/5
@@ -48,7 +41,7 @@ namespace CaWorkshop.WebUI.Controllers
                 return BadRequest();
             }
 
-            await _mediator.Send(command);
+            await Mediator.Send(command);
 
             return NoContent();
         }
@@ -57,7 +50,7 @@ namespace CaWorkshop.WebUI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoList(int id)
         {
-            await _mediator.Send(new DeleteTodoListCommand { Id = id });
+            await Mediator.Send(new DeleteTodoListCommand { Id = id });
 
             return NoContent();
         }
