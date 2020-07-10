@@ -13,7 +13,8 @@ namespace CaWorkshop.Application.Common.Behaviours
         private readonly ICurrentUserService _currentUserService;
         private readonly IIdentityService _identityService;
 
-        public LoggingBehaviour(ILogger<TRequest> logger,
+        public LoggingBehaviour(
+            ILogger<TRequest> logger,
             ICurrentUserService currentUserService,
             IIdentityService identityService)
         {
@@ -27,7 +28,7 @@ namespace CaWorkshop.Application.Common.Behaviours
         {
             var requestName = typeof(TRequest).Name;
             var userId = _currentUserService.UserId ?? string.Empty;
-            string userName = string.Empty;
+            string userName = "Anonymous";
 
             if (!string.IsNullOrEmpty(userId))
             {

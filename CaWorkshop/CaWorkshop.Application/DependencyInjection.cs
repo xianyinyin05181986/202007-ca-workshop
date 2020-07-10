@@ -22,6 +22,10 @@ namespace CaWorkshop.Application
 
             services.AddTransient(typeof(IPipelineBehavior<,>),
     typeof(PerformanceBehaviour<,>));
+
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+              typeof(UnhandledExceptionBehaviour<,>));
+
             return services;
         }
     }
