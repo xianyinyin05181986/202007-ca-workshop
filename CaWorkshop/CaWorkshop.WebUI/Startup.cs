@@ -1,6 +1,8 @@
 using CaWorkshop.Application;
 using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Infrastructure;
+using CaWorkshop.WebUI.Filters;
+using CleanArchitecture.WebUI.Common;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +25,8 @@ namespace CaWorkshop.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilter()))
                 // Comment out the follow lines to disable the validation 
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<IApplicationDbContext>())
                 ;
@@ -58,6 +61,8 @@ namespace CaWorkshop.WebUI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
+            app.UseCustomExceptionHandler();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
