@@ -17,13 +17,17 @@ namespace CaWorkshop.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
+            
             services.AddScoped<IApplicationDbContext>(provider =>
     provider.GetService<ApplicationDbContext>());
+            
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+
+            services.AddScoped<IIdentityService, IdentityService>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

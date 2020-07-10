@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaWorkshop.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CaWorkshop.Domain.Entities
 {
-    public class TodoItem
+    public class TodoItem : AuditableEntity
     {
         public long Id { get; set; }
 

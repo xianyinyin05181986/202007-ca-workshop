@@ -2,6 +2,7 @@ using CaWorkshop.Application;
 using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Infrastructure;
 using CaWorkshop.WebUI.Filters;
+using CaWorkshop.WebUI.Services;
 using CleanArchitecture.WebUI.Common;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +26,10 @@ namespace CaWorkshop.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+
             services.AddControllersWithViews(options =>
                 options.Filters.Add(new ApiExceptionFilter()))
                 // Comment out the follow lines to disable the validation 
